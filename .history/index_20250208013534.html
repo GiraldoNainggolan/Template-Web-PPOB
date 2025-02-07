@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web PPOB - MyCompany</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS (jika diperlukan) */
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    .custom-table th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-7">
+          <a href="#" class="flex items-center py-4 px-2">
+            <span class="font-semibold text-gray-500 text-lg">MyCompany PPOB</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500">Home</a>
+          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500">Services</a>
+          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500">History</a>
+          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500">Profile</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-green-500 text-white py-20">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-4">Welcome to MyCompany PPOB</h1>
+      <p class="text-xl mb-8">Your one-stop solution for all payment needs.</p>
+      <a href="#services" class="bg-white text-green-500 py-3 px-6 rounded-full font-semibold hover:bg-gray-100">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pulsa -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <img src="https://via.placeholder.com/64" alt="Pulsa" class="w-16 h-16 mx-auto mb-4">
+          <h3 class="text-xl font-bold mb-4">Pulsa</h3>
+          <p>Top up pulsa semua operator.</p>
+          <button onclick="showAlert('Pulsa')" class="mt-4 bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600">Buy Now</button>
+        </div>
+        <!-- Listrik -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <img src="bayar_listrik.png" alt="Listrik" class="w-16 h-16 mx-auto mb-4">
+          <h3 class="text-xl font-bold mb-4">Listrik</h3>
+          <p>Bayar tagihan listrik PLN.</p>
+          <button onclick="showAlert('Listrik')" class="mt-4 bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600">Pay Now</button>
+        </div>
+        <!-- Paket Data -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <img src="" alt="Paket Data" class="w-16 h-16 mx-auto mb-4">
+          <h3 class="text-xl font-bold mb-4">Paket Data</h3>
+          <p>Beli paket internet.</p>
+          <button onclick="showAlert('Paket Data')" class="mt-4 bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transaction History Section -->
+  <section class="bg-gray-200 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Transaction History</h2>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <table class="custom-table w-full">
+          <thead>
+            <tr>
+              <th class="py-2">Date</th>
+              <th class="py-2">Service</th>
+              <th class="py-2">Amount</th>
+              <th class="py-2">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 text-center">2023-10-01</td>
+              <td class="py-2 text-center">Pulsa</td>
+              <td class="py-2 text-center">Rp 50.000</td>
+              <td class="py-2 text-center text-green-500">Success</td>
+            </tr>
+            <tr>
+              <td class="py-2 text-center">2023-10-02</td>
+              <td class="py-2 text-center">Listrik</td>
+              <td class="py-2 text-center">Rp 200.000</td>
+              <td class="py-2 text-center text-green-500">Success</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 MyCompany PPOB. All rights reserved.</p>
+      <div class="mt-4">
+        <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript untuk interaktivitas
+    function showAlert(service) {
+      alert(`Anda memilih layanan: ${service}`);
+    }
+  </script>
+</body>
+</html>
